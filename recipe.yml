@@ -1,0 +1,56 @@
+name: 'Radicati Admin Setup'
+description: 'Sets up base config for the admin aspect of a Radicati project'
+type: 'Admin'
+install:
+  - config
+  - help
+  - rename_admin_paths
+  - admin_toolbar
+  - admin_toolbar_tools
+  - gin
+  - gin_login
+  - gin_toolbar
+  - rename_admin_paths
+  - gin_lb
+config:
+  import:
+    admin_toolbar: "*"
+    admin_toolbar_tools: "*"
+    gin:
+      - gin.settings
+      - block.block.gin_breadcrumbs
+      - block.block.gin_content
+      - block.block.gin_help
+      - block.block.gin_local_actions
+      - block.block.gin_messages
+      - block.block.gin_page_title
+      - block.block.gin_primary_local_tasks
+    gin_login: "*"
+    gin_toolbar: "*"
+    rename_admin_paths: "*"
+    gin_lb: "*"
+  actions:
+    rename_admin_paths.settings:
+      simple_config_update:
+        admin_path: 1
+        admin_path_value: 'manage'
+        user_path: 1
+        user_path_value: 'signin'
+    system.theme:
+      simple_config_update:
+        admin: gin
+    block.block.gin_primary_local_tasks:
+      simple_config_update:
+        status: false
+    block.block.gin_admin:
+      simple_config_update:
+        status: false
+    block.block.gin_branding:
+      simple_config_update:
+        status: false
+    block.block.gin_tools:
+      simple_config_update:
+        status: false
+    node.settings:
+      simple_config_update:
+        use_admin_theme: 1

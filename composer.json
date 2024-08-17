@@ -1,0 +1,19 @@
+{
+  "name": "getrootid/radicati-recipe-admin",
+  "description": "Base settings for the Drupal admin for a Radicati site. Includes Gin, rename admin paths, and various other admin-y things.",
+  "type": "drupal-recipe",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Jason Mickela"
+    }
+  ],
+  "require": {
+    "drupal/admin_toolbar": "*",
+    "drupal/gin": "*",
+    "drupal/gin_login": "*",
+    "drupal/gin_toolbar": "*",
+    "drupal/rename_admin_paths": "*",
+    "drupal/gin_lb": "*"
+  }
+}
